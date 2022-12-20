@@ -8,7 +8,7 @@ contract Caller{
     }
 
     function callDeposit() external payable returns(bool result) {
-        (result, ) = rpsAddress.delegatecall(
+        (result, ) = payable(rpsAddress).call{value: msg.value}(
             abi.encodeWithSignature("deposit()")
         ); 
         return result;
