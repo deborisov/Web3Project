@@ -193,7 +193,7 @@ contract Roulette is VRFConsumerBaseV2{
     }
 
     modifier hasValidStakeNumber(uint256 number){
-        require(number >= 0 && number <= 36, "Commitment not provided");
+        require(number >= 0 && number <= 36, "Invalid number");
         _;
     }
 }
