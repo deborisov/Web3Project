@@ -133,7 +133,7 @@ contract Roulette is VRFConsumerBaseV2{
             else
             {
                 games[msg.sender].result = GameResult.Lose;
-                balances[s_owner] = balances[msg.sender] + stake * (36 gwei);
+                balances[s_owner] = balances[s_owner] + stake * (36 gwei);
             }
         }
         if (games[msg.sender].stakeType == StakeType.Odd)
@@ -146,7 +146,7 @@ contract Roulette is VRFConsumerBaseV2{
             else
             {
                 games[msg.sender].result = GameResult.Lose;
-                balances[s_owner] = balances[msg.sender] + stake * (2 gwei);
+                balances[s_owner] = balances[s_owner] + stake * (2 gwei);
             }
         }
         if (games[msg.sender].stakeType == StakeType.Even)
@@ -159,7 +159,7 @@ contract Roulette is VRFConsumerBaseV2{
             else
             {
                 games[msg.sender].result = GameResult.Lose;
-                balances[s_owner] = balances[msg.sender] + stake * (2 gwei);
+                balances[s_owner] = balances[s_owner] + stake * (2 gwei);
             }
         }
 
